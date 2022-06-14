@@ -1,22 +1,22 @@
 <ul class="list-group">
   {{#each todos}}
-    <li class="list-group-item">
-      <div class="row">
-        <div class="col-auto mr-auto">
-          <input style="vertical-align: middle;" type="checkbox" name="isDone" {{#if this.isDone }} checked {{/if}}
-            disabled>
-          <h4 style="display: inline; vertical-align: middle;">
-            {{ this.name }}
-          </h4>
-        </div>
-        <div class="col-auto">
-          <a class="btn btn-secondary" href="./todos/{{ this._id }}">detail</a>
-          <a class="btn btn-success" href="./todos/{{ this._id }}/edit">edit</a>
-          <form action="./todos/{{ this._id }}?_method=DELETE" method="POST" style="display: inline;">
-            <button class="btn btn-danger" type="submit">delete</button>
-          </form>
-        </div>
+  <li class="list-group-item">
+    <div class="row">
+      <div class="col-auto me-auto">
+        <input style="vertical-align: middle;" type="checkbox" name="isDone" {{#if this.isDone }} checked {{/if}}
+          disabled>
+        <h4 style="display: inline; vertical-align: middle;">
+          {{ this.name }}
+        </h4>
       </div>
-    </li>
+      <div class="col-auto">
+        <a class="btn btn-secondary" href="./todos/{{ this._id }}">detail</a>
+        <a class="btn btn-success" href="./todos/{{ this._id }}/edit">edit</a>
+        <form action="./todos/{{ this._id }}?_method=DELETE" method="POST" style="display: inline;">
+          <button class="btn btn-danger" type="submit">delete</button>
+        </form>
+      </div>
+    </div>
+  </li>
   {{/each}}
 </ul>
